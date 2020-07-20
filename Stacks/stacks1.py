@@ -42,11 +42,57 @@ class Stack:
     
     def size(self):
         return len(self.container)
-    
+
 s1 = Stack()
+
 s1.push(7)
 s1.push(10)
 s1.pop()
 print(s1.size())
 print(s1.peek())
 print(s1.is_empty())
+
+#Reversing a string using stack
+def rev_string(s):
+    stack = Stack()
+
+    for ch in s:
+        stack.push(ch)
+
+    rstr = ''
+    while stack.size()!=0:
+        rstr += stack.pop()
+
+    return rstr
+
+print(rev_string("hello i am skynet"))
+
+#Check for balanced parathesis
+def is_match(ch1, ch2):
+    match_dict = {
+        ')': '(',
+        ']': '[',
+        '}': '{'
+    }
+    return match_dict[ch1] == ch2
+
+
+def is_balanced(s):
+    stack = Stack()
+    for ch in s:
+        if ch=='(' or ch=='{' or ch == '[':
+            stack.push(ch)
+        if ch==')' or ch=='}' or ch == ']':
+            if stack.size()==0:
+                return False
+            if not is_match(ch,stack.pop()):
+                return False
+
+    return stack.size()==0
+
+print(is_balanced("({a+b})"))
+print(is_balanced("))((a+b}{"))
+print(is_balanced("((a+b))"))
+print(is_balanced("((a+g))"))
+print(is_balanced("))"))
+print(is_balanced("[a+b]*(x+2y)*{gg+kk}"))
