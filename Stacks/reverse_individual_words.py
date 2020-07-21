@@ -12,8 +12,7 @@ def reverserWords(string):
                 stack.pop() 
             print(end = " ") 
    
-  
-# Driver Code 
+
 if __name__ == "__main__": 
     string = "Hello this is Skynet"
     reverserWords(string) 
