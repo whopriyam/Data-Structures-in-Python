@@ -31,8 +31,8 @@ def printArray(arr, n):
 price = [10, 4, 5, 90, 120, 80] 
 stack = [0 for i in range(len(price)+1)] 
     
-# Fill the span values in array S[] 
+
 span(price, stack) 
     
-# Print the calculated span values 
+
 printArray(stack, len(price))

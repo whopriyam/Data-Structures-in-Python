@@ -1,41 +1,39 @@
 def sortedInsert(s , element): 
       
-    # Base case: Either stack is empty or newly inserted 
-    # item is greater than top (more than all existing) 
+    #Check item is greater than top (more than all existing) 
     if len(s) == 0 or element > s[-1]: 
+        
         s.append(element) 
         return
+    
     else: 
           
-        # Remove the top item and recur 
+        #Remove the top item and recur 
         temp = s.pop() 
         sortedInsert(s, element) 
   
-        # Put back the top item removed earlier 
+        #Put back the top item removed earlier 
         s.append(temp) 
   
-# Method to sort stack 
+
 def sortStack(s): 
       
-    # If stack is not empty 
+    #If stack is not empty 
     if len(s) != 0: 
           
-        # Remove the top item 
-        temp = s.pop() 
-          
-        # Sort remaining stack 
+        #Remove the top item 
+        temp = s.pop()  
+        #Sort remaining stack 
         sortStack(s) 
-          
-        # Push the top item back in sorted stack 
+        #Push the top item back in sorted stack 
         sortedInsert(s , temp) 
   
-# Printing contents of stack 
+#Printing stack 
 def printStack(s): 
     for i in s[::-1]: 
             print(i , end=" ") 
     print() 
       
-# Driver Code 
 if __name__=='__main__': 
     s = [ ] 
     s.append(30) 
