@@ -5,13 +5,13 @@ instead from on top
 '''
 
 def insertAtBottom(stack,item):
-    def insertAtBottom(stack, item): 
-        if isEmpty(stack): 
-            push(stack, item) 
-        else: 
-            temp = pop(stack) 
-            insertAtBottom(stack, item) 
-            push(stack, temp) 
+    
+    if isEmpty(stack): 
+        push(stack, item) 
+    else: 
+        temp = pop(stack) 
+        insertAtBottom(stack, item) 
+        push(stack, temp) 
             
 def reverse(stack): 
     if not isEmpty(stack): 
