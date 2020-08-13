@@ -5,7 +5,6 @@ instead from on top
 '''
 
 def insertAtBottom(stack,item):
-    
     if isEmpty(stack): 
         push(stack, item) 
     else: 
